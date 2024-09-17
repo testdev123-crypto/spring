@@ -20,8 +20,8 @@ jobs:
         env:
           MYSQL_ROOT_PASSWORD: mypass123
           MYSQL_DATABASE: school
-          MYSQL_USER: root
-          MYSQL_PASSWORD: mypass123
+          MYSQL_USER: rohan
+          MYSQL_PASSWORD: mypass1234
         options: >-
           --health-cmd="mysqladmin ping --silent"
           --health-interval=10s
@@ -54,7 +54,7 @@ jobs:
 
       - name: Configure MySQL connection for Maven
         run: |
-          echo "<settings><servers><server><id>mysql-db</id><username>testuser</username><password>testpassword</password></server></servers></settings>" > $HOME/.m2/settings.xml
+          echo "<settings><servers><server><id>mysql-db</id><username>rohan</username><password>mypass1234</password></server></servers></settings>" > $HOME/.m2/settings.xml
 
       - name: Build with Maven
         run: mvn clean install
@@ -65,5 +65,5 @@ jobs:
           MYSQL_HOST: 127.0.0.1
           MYSQL_PORT: 3306
           MYSQL_DATABASE: school
-          MYSQL_USER: root
-          MYSQL_PASSWORD: mypass123
+          MYSQL_USER: rohan
+          MYSQL_PASSWORD: mypass1234
