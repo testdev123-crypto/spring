@@ -84,4 +84,8 @@ public class RoleService {
             System.out.println("Exception occured ||" + ex.getMessage());
         }
     }
+
+    public int add(int i, int i1) {
+        return i+i1;
+    }
 }

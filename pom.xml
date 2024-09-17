@@ -18,6 +18,7 @@
 		<mvn.compiler.source>${java.version}</mvn.compiler.source>
 		<mvn.compiler.target>${java.version}</mvn.compiler.target>
 		<cxf.version>4.0.3</cxf.version>
+		<sonar.dependencyCheck.htmlReportPath>target/dependency-check-report.html</sonar.dependencyCheck.htmlReportPath>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -180,11 +181,24 @@
 				<groupId>org.apache.cxf</groupId>
 				<artifactId>cxf-codegen-plugin</artifactId>
 				<version>${cxf.version}</version>
-
-
+			</plugin>
+			<plugin>
+				<groupId>org.owasp</groupId>
+				<artifactId>dependency-check-maven</artifactId>
+				<version>10.0.3</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>
+								check
+							</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 
 		</plugins>
+
 	</build>
 
 	<repositories>
