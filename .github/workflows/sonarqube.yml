@@ -67,3 +67,10 @@ jobs:
           MYSQL_DATABASE: school
           MYSQL_USER: rohan
           MYSQL_PASSWORD: mypass1234
+
+      - name: Run SonarQube analysis
+        run: |
+          mvn clean verify sonar:sonar \
+            -Dsonar.projectKey=myusername_myrepository \
+            -Dsonar.host.url=https://465e-59-145-123-10.ngrok-free.app \
+            -Dsonar.login=squ_75103e00bdd50172378e56044918a082b018b803
